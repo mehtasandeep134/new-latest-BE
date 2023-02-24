@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/ERP-BE/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/ERP-BE/tsconfig.app.json",
+    "plugins": ["@nestjs/swagger"]
+  },
+  "monorepo": true,
+  "root": "apps/ERP-BE",
+  "projects": {
+    "ERP-BE": {
+      "type": "application",
+      "root": "apps/ERP-BE",
+      "entryFile": "main",
+      "sourceRoot": "apps/ERP-BE/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/ERP-BE/tsconfig.app.json",
+        "plugins": ["@nestjs/swagger"]
+      }
+    },
+    "user": {
+      "type": "application",
+      "root": "apps/user",
+      "entryFile": "main",
+      "sourceRoot": "apps/user/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user/tsconfig.app.json",
+        "plugins": ["@nestjs/swagger"]
+      }
+    },
+    "company": {
+      "type": "application",
+      "root": "apps/company",
+      "entryFile": "main",
+      "sourceRoot": "apps/company/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/company/tsconfig.app.json",
+        "plugins": ["@nestjs/swagger"]
+      }
+    },
+    "communication": {
+      "type": "application",
+      "root": "apps/communication",
+      "entryFile": "main",
+      "sourceRoot": "apps/communication/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/communication/tsconfig.app.json",
+        "plugins": ["@nestjs/swagger"]
+      }
+    },
+    "module": {
+      "type": "application",
+      "root": "apps/module",
+      "entryFile": "main",
+      "sourceRoot": "apps/module/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/module/tsconfig.app.json",
+        "plugins": ["@nestjs/swagger"]
+      }
+    }
+  }
+}

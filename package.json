@@ -8,7 +8,7 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
-    "start": "nest start --watch",
+    "start": "nest build && node dist/apps/ERP-BE/main",
     "user": "nest start user --watch",
     "module": "nest start module --watch",
     "company": "nest start company --watch",

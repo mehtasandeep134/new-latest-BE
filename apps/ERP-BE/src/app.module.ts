@@ -31,18 +31,14 @@ import { ConfigService } from '@nestjs/config';
     // ConfigModuleDBModule,
     ClientsModule.register([
       {
-        name: 'COMMUNICATION',
-        transport: Transport.TCP,
-      },
-      {
         name: 'COMPANY',
         transport: Transport.TCP,
-        options: { port: 3301 },
+        options: { host: '0.0.0.0', port: 3301 },
       },
       {
         name: 'USER',
         transport: Transport.TCP,
-        options: { port: 3302 },
+        options: { host: '0.0.0.0', port: 3302 },
       },
     ]),
   ],

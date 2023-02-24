@@ -11,8 +11,8 @@ import { UserCreatedEvent } from 'apps/shared/events/user.event';
 @Injectable()
 export class AppService {
   constructor(
-    @Inject('COMMUNICATION')
-    private readonly communicationClient: ClientProxy,
+    // @Inject('COMMUNICATION')
+    // private readonly communicationClient: ClientProxy,
     @Inject('COMPANY')
     private readonly companyClient: ClientProxy,
     @Inject('USER')
@@ -27,14 +27,14 @@ export class AppService {
     createUserRequest: CreateUserRequest,
   ) {
     // emit event to keep communication logs
-    this.communicationClient.emit(
-      'user_created',
-      new UserCreatedEvent(
-        createUserRequest.email,
-        createUserRequest.password,
-        createUserRequest.company_name,
-      ),
-    );
+    // this.communicationClient.emit(
+    //   'user_created',
+    //   new UserCreatedEvent(
+    //     createUserRequest.email,
+    //     createUserRequest.password,
+    //     createUserRequest.company_name,
+    //   ),
+    // );
 
     // emit event to interact with user repo
     this.userClient.emit(
@@ -51,13 +51,13 @@ export class AppService {
     createCompanyRequest: CreateCompanyRequest,
   ) {
     // emit event to keep communication logs
-    this.communicationClient.emit(
-      'company_created',
-      new CompanyCreatedEvent(
-        createCompanyRequest.email,
-        createCompanyRequest.password,
-      ),
-    );
+    // this.communicationClient.emit(
+    //   'company_created',
+    //   new CompanyCreatedEvent(
+    //     createCompanyRequest.email,
+    //     createCompanyRequest.password,
+    //   ),
+    // );
 
     // emit event to interact with company repo
     this.companyClient.emit(
